@@ -11,8 +11,9 @@ Live at **https://00danielcruz11-lang.github.io/**
 | --- | --- |
 | `index.html` | Homepage — the general-purpose PhD CV. Canonical public version. |
 | `cv/CV_Daniel_Cruz_PhD.pdf` | Print version of the homepage CV (A4, 3 pages). |
-| `cv/CV_Daniel_Cruz_PhD_UCD_Parnell.html` | CV tailored to Prof. Andrew Parnell's group, UCD School of Mathematics & Statistics / AIMSIR. |
-| `cv/CV_Daniel_Cruz_PhD_UCD_Parnell.pdf` | Print version of the above (A4, 3 pages). |
+
+Supervisor-tailored CVs are deliberately **not** published here — they're sent as
+direct attachments to the application in question.
 
 Research code and project write-ups live in a separate repository:
 [phd-data-science-portfolio](https://github.com/00danielcruz11-lang/phd-data-science-portfolio).

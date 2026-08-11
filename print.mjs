@@ -26,7 +26,6 @@ if (!CHROME || !existsSync(CHROME)) {
 
 const jobs = [
   ['index.html', 'cv/CV_Daniel_Cruz_PhD.pdf'],
-  ['cv/CV_Daniel_Cruz_PhD_UCD_Parnell.html', 'cv/CV_Daniel_Cruz_PhD_UCD_Parnell.pdf'],
 ];
 
 const browser = await puppeteer.launch({
