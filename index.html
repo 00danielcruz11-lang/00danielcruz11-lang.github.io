@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel Cruz Gutiérrez — Environmental Data Scientist</title>
+<meta name="description" content="Daniel Cruz Gutiérrez — environmental data scientist working on climate, energy and geospatial risk. CV and research portfolio.">
+<style>
+  :root {
+    --paper: #F1F4F2;
+    --surface: #E7EDE8;
+    --ink: #16212B;
+    --ink-soft: #3E4A4C;
+    --rule: #C6CFC7;
+    --accent: #0E6B63;
+    --accent-soft: #DCEAE6;
+    --accent2: #B5691F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #11161A;
+      --surface: #1A2126;
+      --ink: #E8ECE9;
+      --ink-soft: #A9B4AF;
+      --rule: #2C363A;
+      --accent: #3FB2A4;
+      --accent-soft: #17302C;
+      --accent2: #E0954A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #11161A;
+    --surface: #1A2126;
+    --ink: #E8ECE9;
+    --ink-soft: #A9B4AF;
+    --rule: #2C363A;
+    --accent: #3FB2A4;
+    --accent-soft: #17302C;
+    --accent2: #E0954A;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.2rem 1.5rem 5rem;
+    line-height: 1.5;
+    font-size: 16.5px;
+  }
+  .mono {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- header ---- */
+  header { margin-bottom: 1.4rem; }
+  h1 {
+    font-size: 2.15rem;
+    font-weight: 600;
+    margin: 0 0 0.15rem 0;
+    letter-spacing: 0.2px;
+    text-wrap: balance;
+  }
+  .tagline {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+  }
+  .rule-pair { display: flex; flex-direction: column; gap: 3px; margin: 0.9rem 0 1rem; }
+  .rule-pair span { display: block; height: 1px; background: var(--rule); }
+  .rule-pair span:first-child { width: 100%; }
+  .rule-pair span:last-child { width: 38%; background: var(--accent); height: 2px; }
+
+  .contact {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.9rem;
+  }
+  .contact a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .contact a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---- action bar (web only) ---- */
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.5rem 0 0.4rem;
+  }
+  .actions a {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.45rem 0.8rem;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .actions a:hover { border-color: var(--accent); color: var(--accent); }
+  .actions a.primary {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ---- sections ---- */
+  section { margin-top: 2.1rem; }
+  h2 {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 0.85rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .summary { margin: 0 0 0.7rem 0; }
+  .tags { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+  .tags b { color: var(--accent); font-weight: 600; }
+
+  .entry { margin-bottom: 1.25rem; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .entry-title { font-weight: 600; font-size: 1.02rem; }
+  .entry-org { font-style: italic; color: var(--ink-soft); font-size: 0.95rem; margin-top: 0.1rem; }
+  .entry-date {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  ul { margin: 0.45rem 0 0 0; padding-left: 1.1rem; }
+  li { margin-bottom: 0.3rem; }
+  li::marker { color: var(--accent); }
+
+  .note { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 0.9rem 0; }
+
+  .skill-row { margin-bottom: 0.5rem; font-size: 0.95rem; break-inside: avoid; }
+  .skill-cat { font-weight: 600; color: var(--accent); }
+
+  .pub {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+    font-size: 0.95rem;
+    break-inside: avoid;
+  }
+  .pub-note { font-size: 0.88rem; color: var(--ink-soft); }
+
+  a { color: var(--accent); }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 2rem 1.1rem 3rem; font-size: 16px; }
+    h1 { font-size: 1.7rem; }
+    .entry-head { gap: 0.2rem; }
+  }
+
+  /* ---- print: force the light palette, keep accents, drop web chrome ---- */
+  @media print {
+    :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+      --paper: #ffffff;
+      --surface: #F1F4F2;
+      --ink: #16212B;
+      --ink-soft: #3E4A4C;
+      --rule: #C6CFC7;
+      --accent: #0E6B63;
+      --accent-soft: #DCEAE6;
+      --accent2: #B5691F;
+    }
+    @page { size: A4; margin: 15mm 16mm; }
+    html, body {
+      background: #ffffff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      max-width: none;
+      padding: 0;
+      font-size: 10.4pt;
+      line-height: 1.38;
+    }
+    .actions, footer { display: none; }
+    h1 { font-size: 19pt; }
+    .tagline { font-size: 8.4pt; margin-bottom: 0.5rem; }
+    .contact { font-size: 8.2pt; }
+    .contact a { border-bottom: none; }
+    a { color: var(--ink); text-decoration: none; }
+    section { margin-top: 1.05rem; break-inside: auto; }
+    h2 { font-size: 8.4pt; margin-bottom: 0.5rem; break-after: avoid; }
+    .entry { margin-bottom: 0.62rem; }
+    .entry-title { font-size: 10.6pt; }
+    .entry-org { font-size: 9.6pt; }
+    .entry-date { font-size: 8.2pt; }
+    li { margin-bottom: 0.12rem; }
+    .pub, .skill-row, .tags, .note { font-size: 9.6pt; }
+    .rule-pair { margin: 0.6rem 0 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daniel Cruz Gutiérrez</h1>
+  <div class="tagline">Environmental Data Scientist — Climate, Energy &amp; Geospatial Risk</div>
+  <div class="rule-pair"><span></span><span></span></div>
+  <div class="contact">
+    <span>Bogotá, Colombia</span>
+    <a href="mailto:00danielcruz11@gmail.com">00danielcruz11@gmail.com</a>
+    <a href="https://linkedin.com/in/daniel-cruz-gutierrez-b75026238">LinkedIn</a>
+    <a href="https://github.com/00danielcruz11-lang">GitHub</a>
+  </div>
+</header>
+
+<nav class="actions">
+  <a class="primary" href="cv/CV_Daniel_Cruz_PhD.pdf">Download CV (PDF)</a>
+  <a href="https://github.com/00danielcruz11-lang/phd-data-science-portfolio">Research portfolio</a>
+  <a href="cv/CV_Daniel_Cruz_PhD_UCD_Parnell.html">CV — UCD / Parnell group</a>
+</nav>
+
+<section>
+<h2>Research Profile</h2>
+<p class="summary">
+My academic path has moved progressively from ecology to energy systems to climate and geospatial machine
+learning. I use statistical downscaling, neural networks, spatial statistics, and decision-making under uncertainty
+to study climate, energy, and infrastructure systems, and I bring hands-on experience with real satellite,
+climate-model, and land-parcel datasets rather than only classroom problems. I am seeking a fully funded PhD
+that builds on this trajectory — Earth observation, climate/infrastructure risk, or environmental data science —
+while deepening my mathematical and statistical foundations.
+</p>
+<p class="tags">
+<b>Research interests:</b> climate &amp; infrastructure risk · remote sensing &amp; Earth observation ·
+energy and infrastructure systems · statistical learning &amp; decision-making under uncertainty ·
+spatiotemporal modelling
+</p>
+</section>
+
+<section>
+<h2>Education</h2>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">M.Sc. Energy and Sustainability</span>
+    <span class="entry-date">2024 – 2026</span>
+  </div>
+  <div class="entry-org">Pontificia Universidad Javeriana, Bogotá, Colombia — Faculty of Engineering</div>
+  <ul>
+    <li>Thesis: <em>"On the Edge of Uncertainty: Estimating the Impacts of Climate Change on the Hydroelectric
+      Generation of the 'El Guavio' Dam in Cundinamarca, Colombia"</em> (advisor: Prof. Nelson Obregón Neira, in press).
+      Statistically downscaled CMIP6 scenarios to the basin scale, trained a multilayer-perceptron neural network
+      for reservoir inflow prediction, and used multidimensional clustering to derive operating rules.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">B.Sc. Ecology</span>
+    <span class="entry-date">2020 – 2024</span>
+  </div>
+  <div class="entry-org">Pontificia Universidad Javeriana, Bogotá, Colombia — Faculty of Environmental and Rural Studies</div>
+  <ul>
+    <li>Focus on spatial analysis, environmental modelling, and quantitative ecology; foundation for later
+      geospatial and statistical work.</li>
+  </ul>
+</div>
+</section>
+
+<section>
+<h2>Research &amp; Professional Experience</h2>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Data Scientist — Energy Research</span>
+    <span class="entry-date">Jun. 2026 – Present</span>
+  </div>
+  <div class="entry-org">Aterio (Vancouver, Canada) — Remote, Bogotá</div>
+  <ul>
+    <li>Own the land-parcel and satellite change-detection data products over a proprietary inventory of 8,870 US
+      data-center buildings, from acquisition through production pipelines and analyst review tooling — direct,
+      applied experience in Earth observation and infrastructure monitoring at scale.</li>
+    <li>Built a satellite change-detection review platform over Sentinel-2, Planet, Vantor, and Airbus imagery
+      (Supabase edge functions, React/TypeScript UI), and diagnosed a defect where unbounded Sentinel-2 queries
+      caused every run to compare an image against itself.</li>
+    <li>Designed a Python parcel-acquisition pipeline with three-layer deduplication (coordinate matching, purchase
+      history, R-tree point-in-polygon) against a per-record-billed API, cutting billed lookups 43–93% below one
+      call per site.</li>
+    <li>Resolved corporate ownership across single-purpose LLCs by normalizing mailing addresses, owner names, and
+      tax-agent records, exposing 83 owner clusters at no additional API cost.</li>
+    <li>Delivered a corpus of 1,170 US land parcels (121 attributes, 45 states) linked to 4,973 data-center
+      buildings.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Research Intern</span>
+    <span class="entry-date">Dec. 2025 – Apr. 2026</span>
+  </div>
+  <div class="entry-org">Okinawa Institute of Science and Technology (OIST), Okinawa, Japan</div>
+  <ul>
+    <li>Configured and executed General Circulation Model (CESM) experiments on HPC clusters in Linux/Ubuntu
+      environments, producing sea-surface-temperature, vertical-wind-shear, and solar-activity scenario outputs.</li>
+    <li>Analyzed extreme-event behaviour — hurricane genesis, track, and intensity — across multi-model ensembles,
+      benchmarked against observational datasets.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Research Associate</span>
+    <span class="entry-date">Jun. 2024 – Nov. 2025</span>
+  </div>
+  <div class="entry-org">Pontificia Universidad Javeriana, Bogotá, Colombia</div>
+  <ul>
+    <li><b>Hydropower &amp; climate risk</b> (M.Sc. thesis, ECOPAN / Civil Engineering): built and compared Random
+      Forest, MLP neural network, fuzzy-logic, and clustering models for reservoir-inflow and dam-operation
+      scenario analysis under CMIP6-downscaled climate projections.</li>
+    <li><b>Geospatial &amp; remote sensing</b> (with IGAC and the Alexander von Humboldt Institute): automated
+      Sentinel/Landsat workflows in Google Earth Engine — NDVI time series, Random Forest land-cover classification
+      on CORINE Land Cover, radiometric correction — producing the human-footprint and landscape-connectivity
+      analyses behind two published research chapters.</li>
+    <li><b>Climate extremes &amp; public health</b> (Dept. of Civil Engineering): curated climate extreme indices
+      (heatwave duration, extreme precipitation) in Python/R and correlated them with mortality data for
+      respiratory and circulatory disease in Spain (manuscript in preparation).</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Data Analyst Intern</span>
+    <span class="entry-date">Jan. – Aug. 2023</span>
+  </div>
+  <div class="entry-org">Brigard Urrutia, Bogotá, Colombia</div>
+  <ul>
+    <li>Built and quality-controlled the environmental and operational GIS datasets behind client risk assessments
+      at a top-tier Colombian law firm, including a precipitation model for agricultural planning and a
+      runoff-based flood-risk assessment.</li>
+  </ul>
+</div>
+</section>
+
+<section>
+<h2>Independent Research Projects</h2>
+<p class="note">Self-directed portfolio built alongside professional work to prototype PhD research directions —
+full code at <a href="https://github.com/00danielcruz11-lang/phd-data-science-portfolio">github.com/00danielcruz11-lang/phd-data-science-portfolio</a>.</p>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Water Catchment Decision Agent Under Uncertainty</span>
+  </div>
+  <ul>
+    <li>Prototype decision-making agent for reservoir operation under stochastic drought/flood hazard scenarios:
+      a water-balance impact model coupled with a Markov decision process, solved by value iteration and evaluated
+      by Monte Carlo policy simulation. Connects two research directions — generative modelling of hazard scenarios
+      and optimization under uncertainty for climate adaptation.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Geospatial Human Footprint Analysis</span>
+  </div>
+  <ul>
+    <li>Composite human-pressure index built from VIIRS nighttime lights, distance-to-settlement and distance-to-road
+      surfaces, land-cover reclassification, and neighborhood-texture fragmentation, implemented in Google Earth
+      Engine and Python (geemap, rasterio).</li>
+  </ul>
+</div>
+</section>
+
+<section>
+<h2>Publications</h2>
+<div class="pub">1. Cruz Gutiérrez, D. &amp; Correa Ayram, C. A. (2024). <em>Changes in the Configuration of the Human
+  Spatial Footprint Over Time: A Prospective Analysis within the Framework of the Peace Agreement in the
+  Department of Guaviare.</em> In <em>Geografías para la Vida</em>, Chapter 6. Instituto Geográfico Agustín
+  Codazzi (IGAC).</div>
+<div class="pub">2. Cruz, D., Correa Ayram, C., &amp; Etter, A. (2024). <em>The Spatial Footprint in the Landscape
+  of the Orinoquía.</em> Bio Report. Alexander von Humboldt Biological Resources Research Institute.</div>
+<div class="pub">3. Cruz Gutiérrez, D. &amp; Obregón Neira, N. <em>On the Edge of Uncertainty: Estimating the
+  Impacts of Climate Change on the Hydroelectric Generation of the "El Guavio" Dam in Cundinamarca,
+  Colombia.</em> M.Sc. Thesis, Pontificia Universidad Javeriana. <em>In press.</em></div>
+<div class="pub pub-note">Manuscript in preparation: extreme heat and public-health outcomes (respiratory and
+  circulatory mortality) in Spain, with the Dept. of Civil Engineering, Pontificia Universidad Javeriana.</div>
+</section>
+
+<section>
+<h2>Awards &amp; Scholarships</h2>
+<ul>
+  <li>Merit scholarship, M.Sc. in Energy and Sustainability, Pontificia Universidad Javeriana (2024).</li>
+</ul>
+</section>
+
+<section>
+<h2>Technical Skills</h2>
+<div class="skill-row"><span class="skill-cat">Programming:</span> Python (pandas, GeoPandas, Shapely,
+  scikit-learn, PyTorch, TensorFlow), R, SQL (PostgreSQL, BigQuery), TypeScript, Bash.</div>
+<div class="skill-row"><span class="skill-cat">Machine learning &amp; statistics:</span> neural networks (MLP),
+  Random Forest, fuzzy logic, clustering, statistical downscaling, scenario analysis, entity resolution, Markov
+  decision processes / value iteration, Monte Carlo simulation.</div>
+<div class="skill-row"><span class="skill-cat">Geospatial &amp; remote sensing:</span> Google Earth Engine,
+  Sentinel-1/2, Landsat, Planet, NAIP, QGIS, ArcGIS, TerrSet, spatial indexing (R-tree), NDVI &amp; change
+  detection, GeoJSON/GeoPackage.</div>
+<div class="skill-row"><span class="skill-cat">Climate &amp; HPC:</span> CMIP6, GCM/CESM experiments, HPC
+  clusters, Linux/Ubuntu, extreme-event analysis.</div>
+<div class="skill-row"><span class="skill-cat">Data engineering &amp; cloud:</span> ETL and batch pipelines,
+  Google Cloud Storage, BigQuery, Supabase, REST APIs, Git, AWS, Azure.</div>
+</section>
+
+<section>
+<h2>Talks, Teaching &amp; Outreach</h2>
+<ul>
+  <li>Invited lab talks, ECOPAN Landscape Ecology Lab, Pontificia Universidad Javeriana (2024): "Introduction to
+    GIS Data in R," "Google Earth Engine in Practice," "Finding and Downloading Climate Data."</li>
+  <li>Substitute science teacher, Saint George School, Bogotá (Aug. – Nov. 2024): energy, heat, and temperature;
+    evolution and genetics.</li>
+</ul>
+</section>
+
+<section>
+<h2>Languages</h2>
+<p class="tags">Spanish — Native &nbsp;·&nbsp; English — C1</p>
+</section>
+
+<footer>
+  Built and hosted from source at
+  <a href="https://github.com/00danielcruz11-lang/00danielcruz11-lang.github.io">github.com/00danielcruz11-lang</a>.
+</footer>
+
+</body>
+</html>
