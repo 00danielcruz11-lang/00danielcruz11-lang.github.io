@@ -11,6 +11,7 @@ Live at **https://00danielcruz11-lang.github.io/**
 | --- | --- |
 | `index.html` | Homepage — the general-purpose PhD CV. Canonical public version. |
 | `cv/CV_Daniel_Cruz_PhD.pdf` | Print version of the homepage CV (A4, 3 pages). |
+| `research/phd_proposal_bogota_2column_onepage.pdf` | One-page PhD research proposal on climate spells and urban resilience in Bogotá. |
 
 Supervisor-tailored CVs are deliberately **not** published here — they're sent as
 direct attachments to the application in question.
